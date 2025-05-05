@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Documentação da API - Atento</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui.css" />
+    <style>      
+      .swagger-ui .topbar {
+        background-color: #004776 !important;
+        padding: 0 !important;
+      }
+      .responses-table.live-responses-table {
+        display: none;
+      }
+      img[alt="Swagger UI"] {
+        display: none !important;
+      }
+      .swagger-ui .topbar-wrapper svg {
+        display: none !important; 
+      }     
+      .swagger-ui .topbar-wrapper {
+        background-image: url('/api-doc-atento/atento-logo-atual.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        height: 100px;
+        min-height: 100px;
+        width: 100%;
+        padding-left: 60px; 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="swagger-ui"></div>
+
+   
+    <script src="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-standalone-preset.js"></script>
+
+    <script>
+     
+      const ui = SwaggerUIBundle({
+        url: "swagger.json",
+        dom_id: "#swagger-ui",
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+        layout: "StandaloneLayout",
+        tryItOutEnabled: false,
+        displayOperationId: true,
+        showExtensions: false,
+        showCommonExtensions: false,
+        responseInterceptor: (response) => {
+          if (response.status === 404) {
+            return {
+              ...response,
+              text: () =>
+                Promise.resolve(JSON.stringify({
+                  mensagem: "API apenas para teste, não é possível executar endpoints."
+                }))
+            };
+          }
+          return response;
+        },
+        customCss: `
+          .swagger-ui .topbar {
+            background-color: #4619FF !important;
+          }
+          .swagger-ui .topbar .swagger-ui-logo img {
+            max-height: 50px;
+          }
+        `
+      });
+    </script>
+  </body>
+</html>
