@@ -1,0 +1,311 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API's para consulta de Funcionários | Atento",
+    "description": "Documentação de API - Serviços REST para Gerenciamento de Funcionários da Atento<br>
+<b>Nota Importante:</b> <br>
+Esta documentação apresenta uma interface de demonstração dos endpoints disponíveis para o gerenciamento de funcionários. <br>
+Por favor, observe que esta versão do Swagger UI é estática e não está conectada a uma API real, <br>
+portanto, não retornará dados reais ao executar os endpoints. <br>
+Agradecemos seu interesse e estamos à disposição para esclarecer quaisquer dúvidas sobre a implementação real da API.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/funcionario/cpf/{cpf}": {
+      "get": {
+        "tags": [
+          "Funcionario"
+        ],
+        "summary": "Consulta Funcionário por CPF",
+        "parameters": [
+          {
+            "name": "cpf",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {          
+          "200": {
+            "description": "Request Successfull - API Apenas para teste, não é possível executar os endpoints",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              }
+            }
+          }          
+        }
+      }
+    },
+    "/api/v1/funcionario/re/{re}": {
+      "get": {
+        "tags": [
+          "Funcionario"
+        ],
+        "summary": "Consulta Funcionário por Matrícula",
+        "parameters": [
+          {
+            "name": "re",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Successfull - API Apenas para teste, não é possível executar os endpoints",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FuncionarioDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/funcionario": {
+      "get": {
+        "tags": [
+          "Funcionario"
+        ],
+        "summary": "Consulta Lista de Funcionários",
+        "parameters": [
+          {
+            "name": "Email",
+            "in": "query",
+            "description": "E-mail corporativo do colaborador (opcional)",
+            "schema": {
+              "type": "string",
+              "format": "email",
+              "example": "example@br.atento.com"
+            },
+            "example": "example@br.atento.com"
+          },
+          {
+            "name": "Cargo",
+            "in": "query",
+            "description": "Cargo do colaborador (opcional)",
+            "schema": {
+              "type": "string",
+              "example": "ASSISTENTE/SERVIÇOS (SG3)"
+            },
+            "example": "ASSISTENTE/SERVIÇOS (SG3)"
+          },
+          {
+            "name": "Nome",
+            "in": "query",
+            "description": "Nome do colaborador (opcional)",
+            "schema": {
+              "type": "string",
+              "example": "José Lucas"
+            },
+            "example": "José Lucas"
+          },
+          {
+            "name": "Ativo",
+            "in": "query",
+            "description": "Colaborador Ativo (opcional)",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "description": "Número da página iniciando pelo número 1, onde, a página 1 corresponde a primeira página (opcional)",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "description": "Quantidade de registros que será retornado na página. O padrão é 25 e o limite máximo é 50 registros, valores superiores a 50 serão ignorados (opcional)",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Request Successfull - API Apenas para teste, não é possível executar os endpoints",
+            "headers": {
+              "x-pagination": {
+                "description": "Informações de paginação",
+                "schema": {
+                  "type": "string",
+                  "example": "{\"TotalCount\":1242779,\"PageSize\":50,\"CurrentPage\":1,\"TotalPages\":24856,\"HasNext\":true,\"HasPrevious\":false}"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FuncionarioDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FuncionarioDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FuncionarioDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FuncionarioDTO": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "cpf": {
+            "type": "integer",
+            "description": "CPF do colaborador",
+            "format": "int64",
+            "nullable": true,
+            "example": 20907116043
+          },
+          "nome": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string",
+            "description": "Nome do colaborador",
+            "example": "José Lucas"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "description": "Data de nascimento do colaborador (DD-MM-AAAA)",
+            "nullable": true,
+            "example": "18-09-1976"
+          },
+          "nomeSocial": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Nome do colaborador",
+            "nullable": true,
+            "example": "José Lucas"
+          },
+          "email": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "E-mail corporativo do colaborador",
+            "nullable": true,
+            "example": "example@br.atento.com"
+          },
+          "cargo": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Cargo do colaborador",
+            "nullable": true,
+            "example": "ASSISTENTE/SERVIÇOS (SG3)"
+          },
+          "cargoSigla": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Sigla do Cargo do colaborador",
+            "nullable": true,
+            "example": "E2"
+          },
+          "empresaNome": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Nome da empresa do colaborador",
+            "nullable": true,
+            "example": "Atento"
+          },
+          "codigoEmpresa": {
+            "type": "integer",
+            "description": "Código da empresa do colaborador",
+            "format": "int32",
+            "example": 1
+          },
+          "departamento": {
+            "maxLength": 100,
+            "type": "string",
+            "description": "Departamento do colaborador",
+            "nullable": true,
+            "example": "COMERCIAL"
+          },
+          "ativo": {
+            "type": "string",
+            "description": "Colaborador Ativo",
+            "nullable": true,
+            "example": "S"
+          },
+          "ferias": {
+            "type": "string",
+            "description": "Colaborador esta de férias",
+            "nullable": true,
+            "example": "S"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Insira o token JWT no campo abaixo. Exemplo: Bearer {seu_token}",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
