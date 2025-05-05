@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "API's para consulta de Funcionários | Atento",
-    "description": "Documentação de API - Serviços REST para Gerenciamento de Funcionários da Atento<br>
+    "description": "Documentação de API - Serviços REST para Gerenciamento de Funcionários da Atento<br><br>
 <b>Nota Importante:</b> <br>
 Esta documentação descreve os principais endpoints da API de Funcionários, incluindo seus métodos, parâmetros e exemplos de uso.
 O objetivo é fornecer uma visão clara e detalhada das funcionalidades disponíveis para integração com os sistemas da Atento, facilitando a consulta e o desenvolvimento de soluções baseadas na API.
