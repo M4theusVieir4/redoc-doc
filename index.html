@@ -1,74 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
     <title>Documentação da API - Atento</title>
-    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui.css" />
-    <style>      
-      .swagger-ui .topbar {
-        background-color: #004776 !important;
-        padding: 0 !important;
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
       }
-      .responses-table.live-responses-table {
-        display: none;
+
+      .custom-header {
+        padding: 10px 20px;
+        background-color: #004776;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
       }
-      img[alt="Swagger UI"] {
-        display: none !important;
+
+      .custom-header img {
+        height: 60px;
+        margin-right: 20px;
       }
-      .swagger-ui .topbar-wrapper svg {
-        display: none !important; 
-      }     
-      .swagger-ui .topbar-wrapper {
-        background-image: url('/api-doc-atento/atento-logo-atual.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left center;
-        height: 100px;
-        min-height: 100px;
-        width: 100%;
-        padding-left: 60px; 
+
+      .custom-header h1 {
+        color: white;
+        font-size: 20px;
+        margin: 0;
+      }
+
+      redoc {
+        display: block;
+        height: calc(100vh - 80px);
       }
     </style>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
   </head>
   <body>
-    <div id="swagger-ui"></div>
+    <div class="custom-header">
+      <img src="/redoc-doc/atento-logo-atual.png" alt="Logo Atento" />
+      <h1>Documentação da API - Atento</h1>
+    </div>
 
-   
-    <script src="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-bundle.js"></script>
-    <script src="https://unpkg.com/swagger-ui-dist@4.15.5/swagger-ui-standalone-preset.js"></script>
-
-    <script>
-     
-      const ui = SwaggerUIBundle({
-        url: "swagger.json",
-        dom_id: "#swagger-ui",
-        presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
-        layout: "StandaloneLayout",
-        tryItOutEnabled: false,
-        displayOperationId: true,
-        showExtensions: false,
-        showCommonExtensions: false,
-        responseInterceptor: (response) => {
-          if (response.status === 404) {
-            return {
-              ...response,
-              text: () =>
-                Promise.resolve(JSON.stringify({
-                  mensagem: "API apenas para teste, não é possível executar endpoints."
-                }))
-            };
-          }
-          return response;
-        },
-        customCss: `
-          .swagger-ui .topbar {
-            background-color: #4619FF !important;
-          }
-          .swagger-ui .topbar .swagger-ui-logo img {
-            max-height: 50px;
-          }
-        `
-      });
-    </script>
+    <redoc spec-url="swagger.json"></redoc>
   </body>
 </html>
