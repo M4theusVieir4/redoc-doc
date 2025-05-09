@@ -4,7 +4,7 @@
     "title": "API's para consulta de Funcionários | Atento",
     "description": "Documentação de API - Serviços REST para Gerenciamento de Funcionários da Atento.<br><br><b>Nota Importante:</b><br>Esta documentação descreve os principais endpoints da API de Funcionários, incluindo seus métodos, parâmetros e exemplos de uso.\nO objetivo é fornecer uma visão clara e detalhada das funcionalidades disponíveis para integração com os sistemas da Atento, facilitando a consulta e o desenvolvimento de soluções baseadas na API.<br><br>Para dúvidas técnicas ou suporte à integração, entre em contato com a equipe responsável pela API.",
     "version": "v1"
-  }
+  },
   "paths": {
     "/api/v1/funcionario/cpf/{cpf}": {
       "get": {
