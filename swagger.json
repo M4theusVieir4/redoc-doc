@@ -322,7 +322,7 @@
                 "funcionariosNaoEncontrados": {
                 "summary": "Listagem de funcionários",
                 "value": "Funcionários não encontrados"
-              },
+              }
               }
             }
         }
