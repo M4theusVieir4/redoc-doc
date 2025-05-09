@@ -46,29 +46,7 @@
             }
           },
           "401": {
-            "description": "Erro: response status is 401",
-            "headers": {
-              "content-length": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "date": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "server": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "www-authenticate": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
+            "description": "Erro: response status is 401",            
             "content": {
               "application/json": {
                 "example": {
@@ -139,29 +117,7 @@
             }
           },
           "401": {
-            "description": "Erro: response status is 401",
-            "headers": {
-              "content-length": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "date": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "server": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "www-authenticate": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
+            "description": "Erro: response status is 401",            
             "content": {
               "application/json": {
                 "example": {
@@ -297,29 +253,7 @@
             }
           },
           "401": {
-            "description": "Erro: response status is 401",
-            "headers": {
-              "content-length": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "date": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "server": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "www-authenticate": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            },
+            "description": "Erro: response status is 401",            
             "content": {
               "application/json": {
                 "example": {
@@ -327,7 +261,7 @@
                 }
               }
             }
-          },          
+          },       
           "404": {
             "description": "Error: response status is 404",
             "content": {
