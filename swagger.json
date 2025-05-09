@@ -171,12 +171,19 @@
             }
           },
           "404": {
-            "description": "Erro: response status is 404",
+            "description": "Error: response status is 404",
             "content": {
               "application/json": {
-                "examples": {                
-                  "funcionarioNaoEncontrado": {                    
-                    "value": "Funcionário não encontrado"
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Funcionário não encontrado"
+                    }
+                  },
+                  "example": {
+                    "message": "Funcionário não encontrado"
                   }
                 }
               }
@@ -320,20 +327,26 @@
                 }
               }
             }
-          },
+          },          
           "404": {
-            "description": "Erro: response status is 404",
+            "description": "Error: response status is 404",
             "content": {
               "application/json": {
-                "examples": {                
-                  "funcionariosNaoEncontrados": {
-                  "summary": "Listagem de funcionários",
-                  "value": "Funcionários não encontrados"
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "description": "Funcionários não encontrados"
+                    }
+                  },
+                  "example": {
+                    "message": "Funcionários não encontrados"
                   }
                 }
               }
             }
-          }  
+          }
         }
       }
     }
