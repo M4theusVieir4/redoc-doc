@@ -46,50 +46,50 @@
             }
           },
           "401": {
-          "description": "Erro: response status is 401",
-          "headers": {
-            "content-length": {
-              "schema": {
-                "type": "string"
+            "description": "Erro: response status is 401",
+            "headers": {
+              "content-length": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "www-authenticate": {
+                "schema": {
+                  "type": "string"
+                }
               }
             },
-            "date": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "server": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "www-authenticate": {
-              "schema": {
-                "type": "string"
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Error: response status is 401"
+                }
               }
             }
           },
-          "content": {
-            "application/json": {
-              "example": {
-                "message": "Error: response status is 401"
-              }
-            }
-          }
-        },
           "404": {
-          "description": "Erro: response status is 404",
-          "content": {
-            "application/json": {
-              "examples": {                
-                "funcionarioNaoEncontrado": {
-                  "summary": "Download de funcionário",
-                  "value": "Funcionário não encontrado"
+            "description": "Erro: response status is 404",
+            "content": {
+              "application/json": {
+                "examples": {                
+                  "funcionarioNaoEncontrado": {
+                    "summary": "Download de funcionário",
+                    "value": "Funcionário não encontrado"
+                  }
                 }
               }
             }
           }
-        }
         }
       }
     },
@@ -133,50 +133,50 @@
             }
           },
           "401": {
-          "description": "Erro: response status is 401",
-          "headers": {
-            "content-length": {
-              "schema": {
-                "type": "string"
+            "description": "Erro: response status is 401",
+            "headers": {
+              "content-length": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "www-authenticate": {
+                "schema": {
+                  "type": "string"
+                }
               }
             },
-            "date": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "server": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "www-authenticate": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          },
-          "content": {
-            "application/json": {
-              "example": {
-                "message": "Error: response status is 401"
-              }
-            }
-          }
-        },
-          "404": {
-          "description": "Erro: response status is 404",
-          "content": {
-            "application/json": {
-              "examples": {                
-                "funcionarioNaoEncontrado": {
-                  "summary": "Download de funcionário",
-                  "value": "Funcionário não encontrado"
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Error: response status is 401"
                 }
               }
             }
+          },
+          "404": {
+            "description": "Erro: response status is 404",
+            "content": {
+              "application/json": {
+                "examples": {                
+                  "funcionarioNaoEncontrado": {
+                    "summary": "Download de funcionário",
+                    "value": "Funcionário não encontrado"
+                  }
+                }
+              }
+          }
         }
-      }
     },
     "/api/v1/funcionario": {
       "get": {
@@ -283,50 +283,50 @@
             }
           },
           "401": {
-          "description": "Erro: response status is 401",
-          "headers": {
-            "content-length": {
-              "schema": {
-                "type": "string"
+            "description": "Erro: response status is 401",
+            "headers": {
+              "content-length": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "date": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "server": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "www-authenticate": {
+                "schema": {
+                  "type": "string"
+                }
               }
             },
-            "date": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "server": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "www-authenticate": {
-              "schema": {
-                "type": "string"
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Error: response status is 401"
+                }
               }
             }
           },
-          "content": {
-            "application/json": {
-              "example": {
-                "message": "Error: response status is 401"
-              }
-            }
-          }
-        },
           "404": {
-          "description": "Erro: response status is 404",
-          "content": {
-            "application/json": {
-              "examples": {                
-                "funcionariosNaoEncontrados": {
-                "summary": "Listagem de funcionários",
-                "value": "Funcionários não encontrados"
+            "description": "Erro: response status is 404",
+            "content": {
+              "application/json": {
+                "examples": {                
+                  "funcionariosNaoEncontrados": {
+                  "summary": "Listagem de funcionários",
+                  "value": "Funcionários não encontrados"
+                }
+                }
               }
-              }
-            }
+          }
         }
-      }
     }
   },
   "components": {
