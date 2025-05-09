@@ -169,14 +169,15 @@
             "content": {
               "application/json": {
                 "examples": {                
-                  "funcionarioNaoEncontrado": {
-                    "summary": "Download de funcionário",
+                  "funcionarioNaoEncontrado": {                    
                     "value": "Funcionário não encontrado"
                   }
                 }
               }
+            }
           }
         }
+      }
     },
     "/api/v1/funcionario": {
       "get": {
@@ -329,6 +330,7 @@
           }  
         }
       }
+    }
   },
   "components": {
     "schemas": {
@@ -355,7 +357,7 @@
           "dataNascimento": {
             "type": "string",
             "description": "Data de nascimento do colaborador (DD-MM-AAAA)",
-            "nullable": true,
+            "nullable": true,            
             "example": "18-09-1976"
           },
           "nomeSocial": {
