@@ -86,18 +86,11 @@
                   "properties": {
                     "message": {
                       "type": "string",
-                      "example": "Funcionário não encontrado"
+                      "description": "Funcionário não encontrado"
                     }
                   },
                   "example": {
                     "message": "Funcionário não encontrado"
-                  }
-                },
-                "examples": {
-                  "funcionarioNaoEncontrado": {                    
-                    "value": {
-                      "message": "Funcionário não encontrado"
-                    }
                   }
                 }
               }
