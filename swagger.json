@@ -78,7 +78,7 @@
             }
           },
           "404": {
-            "description": "Erro: recurso não encontrado",
+            "description": "Error: response status is 404",
             "content": {
               "application/json": {
                 "schema": {
@@ -88,11 +88,13 @@
                       "type": "string",
                       "example": "Funcionário não encontrado"
                     }
+                  },
+                  "example": {
+                    "message": "Funcionário não encontrado"
                   }
                 },
                 "examples": {
-                  "funcionarioNaoEncontrado": {
-                    "summary": "Mensagem de erro quando o funcionário não é encontrado",
+                  "funcionarioNaoEncontrado": {                    
                     "value": {
                       "message": "Funcionário não encontrado"
                     }
